@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clock">
+    <span id="hours">00</span>
+    <span>:</span>
+    <span id="minutes">00</span>
+    <span>:</span>
+    <span id="seconds">00</span>
+    <h1></h1>
+</div>
+<script>
+    function time() {
+    let clock = new Date()
+    let hr = clock.getHours()
+    // let am_pm=(hours>=12)?"PM":"AM"
+    // if(hours>=12){hours-=12}
+    // let clockTime=hours+":"
+    let minutes = clock.getMinutes()
+    let seconds = clock.getSeconds()
+    let hours = document.querySelector('#hours')
+    if(hr>12) 
+    hr=hr-12
+        
+    // hr=(hr-12 + ':' + m+'pm'):(h+':'+m+'am')
+    hours.innerHTML = hr
+    let min = document.querySelector('#minutes')
+    min.innerHTML = minutes
+    let sec = document.querySelector('#seconds')
+    sec.innerHTML = seconds
+    }
+    setInterval(time,1000)
+</script>
+</body>
+</html>
